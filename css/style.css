@@ -1,0 +1,369 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/* ==========================================================================
+    normalize.css v2.1.2 | MIT License | git.io/normalize
+   ========================================================================== */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+mark {
+  background: yellow;
+  color: black;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace,serif;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Globals */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+body {
+  background: url(../img/bg.jpg) no-repeat left center fixed black;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  overflow: hidden;
+  -webkit-transition: background-position 2.5s ease;
+  transition: background-position 2.5s ease;
+}
+a {
+  color: black;
+  font-weight: 600;
+}
+a:hover {
+  text-decoration: none;
+}
+.logo {
+  background: url(../img/logo.png) no-repeat;
+  height: 152px;
+  left: 50%;
+  margin-left: -140px;
+  position: absolute;
+  top: 5%;
+  width: 280px;
+  font-size: 0;
+}
+.container {
+  display: table;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  -webkit-transition: left 1.5s ease .2s;
+  transition: left 1.5s ease .2s;
+  width: 100%;
+}
+.container .intro-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+.container .intro {
+  background: rgba(253, 253, 253, 0.85);
+  border: 1px solid white;
+  margin: 0 auto;
+  padding: 15px 20px;
+  width: 50%;
+}
+.about-container {
+  display: table;
+  height: 100%;
+  left: 100%;
+  position: absolute;
+  -webkit-transition: left 1.5s ease .5s;
+  transition: left 1.5s ease .5s;
+  width: 100%;
+}
+.about-container .about-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.about-container .about {
+  background: rgba(253, 253, 253, 0.85);
+  border: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 20px;
+  width: 50%;
+}
+.about-container .about .close {
+  float: right;
+}
+.about-container .about .work-content p {
+  border-bottom: 1px solid #a5a5a5;
+  padding-bottom: 15px;
+}
+.about-container .about .work-content p:last-child {
+  border-bottom: 0;
+}
+.expand-about {
+  background-position: right center;
+  -webkit-transition: background-position 2.5s ease;
+  transition: background-position 2.5s ease;
+}
+.expand-about .container {
+  left: -100%;
+  transition: left 1.5s ease .3s;
+}
+.expand-about .about-container {
+  left: 0;
+  display: table;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: left 2s ease;
+  transition: left 2s ease;
+  width: 100%;
+}
+.expand-about .about-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.expand-about .about {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+}
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+footer .social {
+  left: -50%;
+  position: relative;
+}
+footer a {
+  background: url(../img/social.png);
+  display: inline-block;
+  font-size: 0;
+  height: 47px;
+  width: 46px;
+}
+footer .linkedin {
+  background-position: -46px 0;
+}
+footer .twitter {
+  background-position: 0 0;
+}
+footer .mail {
+  background-position: -92px 0;
+}
+@media (max-device-height: 685px) {
+  .intro-container p,
+  .intro-contaner h1,
+  .intro-container h3,
+  .about-container {
+    display: none;
+  }
+  .intro-container .mobile {
+    display: block;
+  }
+  footer {
+    bottom: 5px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .intro-container h1 {
+    font-size: 1.4em;
+  }
+}
+@media (max-device-height: 685px) and (orientation: landscape) {
+  footer {
+    bottom: 10px;
+    left: inherit;
+    right: 10px;
+  }
+  footer .social {
+    left: 0;
+  }
+  footer .social a {
+    display: block;
+  }
+}
+@media all and (max-width: 600px) {
+  body {
+    background: url(../img/bg_mobile.jpg) no-repeat left center fixed black;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+  }
+}
+@media (max-height: 800px) {
+  .logo {
+    background-size: 75% 75%;
+    height: 114px;
+    left: 10%;
+    margin-left: 0;
+    width: 210px;
+  }
+  .about {
+    font-size: 12px;
+  }
+}
